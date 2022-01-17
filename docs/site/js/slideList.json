@@ -1,0 +1,64 @@
+[{
+    "filename": "00_01",
+    "title": "Why Git?" }
+,{
+    "filename": "00_02",
+    "title": "Using the Exercises" }
+,{
+    "filename": "01_01",
+    "title": "What is Git" }
+,{
+    "filename": "01_02",
+    "title": "Setting Up a Project" }
+,{
+    "filename": "01_03",
+    "title": "Understanding Environments" }
+,{
+    "filename": "01_04",
+    "title": "Ignoring Files" }
+,{
+    "filename": "01_05",
+    "title": "Deleting and Renaming Files" }
+,{
+    "filename": "01_06",
+    "title": "Differences" }
+,{
+    "filename": "01_07",
+    "title": "Changing History" }
+,{
+    "filename": "01_08",
+    "title": "Branches" }
+,{
+    "filename": "01_09",
+    "title": "Merge Conflicts" }
+,{
+    "filename": "01_10",
+    "title": "Stash and Clean" }
+,{
+    "filename": "02_01",
+    "title": "Github" }
+,{
+    "filename": "02_02",
+    "title": "Pushing to Github" }
+,{
+    "filename": "02_03",
+    "title": "Github Options" }
+,{
+    "filename": "02_04",
+    "title": "Pull Requests" }
+,{
+    "filename": "02_05",
+    "title": "Organizing Projects" }
+,{
+    "filename": "02_06",
+    "title": "Syncing GitHub" }
+,{
+    "filename": "99_01",
+    "title": "Next Steps" }
+,{
+    "filename": "demo",
+    "title": "Opinionated Reveal.js" }
+,{
+    "filename": "slides",
+    "title": "" }
+]
