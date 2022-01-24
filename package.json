@@ -1,7 +1,7 @@
 {
-  "name": "sass_esst",
+  "name": "slides_sassesst",
   "description": "RayVeal.js, the markdown first slide framework based on the awesome reveal.js",
-  "repository": "http://github.com/planetoftheweb/rayveal",
+  "repository": "http://github.com/planetoftheweb/slides_sassesst",
   "license": "MIT",
   "version": "2.0.0",
   "scripts": {
@@ -14,7 +14,7 @@
     "prod:serve": "ELEVENTY_ENV=production eleventy --output=./docs/site",
     "prod:copy": "copyfiles -u 2 ./src/slides/*.md ./docs/slides",
     "prod:copyJS": "copyfiles -u 2 /docs/site/slideList.json ./js/slideList.json",
-    "prod:vite": "vite build --outDir=../docs --base=/sass_esst",
+    "prod:vite": "vite build --outDir=../docs --base=/slides_sassesst",
     "prod:jekylloff": "touch docs/.nojekyll"
   },
   "devDependencies": {
