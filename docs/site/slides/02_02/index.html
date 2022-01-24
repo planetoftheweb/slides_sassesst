@@ -62,20 +62,20 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="/site/slides/02_01/index.html">
-                      <i class="fas fa-file-alt me-2 lh-1  text-light "></i>
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="/site/slides/02_01/index.html">
+                      <i class="fas fa-file-alt me-2 lh-1  text-primary "></i>
                       02_01 SASS Syntax</a>
-                    <a class=" link-light  flex-fill ms-3 text-end" href="../../../?d=02_01&#">
+                    <a class=" link-secondary  flex-fill ms-3 text-end" href="../../../?d=02_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="/site/slides/02_02/index.html">
-                      <i class="fas fa-file-alt me-2 lh-1  text-primary "></i>
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="/site/slides/02_02/index.html">
+                      <i class="fas fa-file-alt me-2 lh-1  text-light "></i>
                       02_02 Using Variables</a>
-                    <a class=" link-secondary  flex-fill ms-3 text-end" href="../../../?d=02_02&#">
+                    <a class=" link-light  flex-fill ms-3 text-end" href="../../../?d=02_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -227,49 +227,89 @@
           </aside>
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="syntax-versions">Syntax Versions <a class="direct-link" href="#syntax-versions"> </a></h1>
+<h1 id="using-variables">Using Variables <a class="direct-link" href="#using-variables"> </a></h1>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There are in fact two different flavors of SASS, although most people use the newer format, let's examine the basic differences.</p>
+<p>Variables let you create placeholders for values and then use them to apply them to different places in your designs.</p>
 <hr>
-<h1 id="sass-format">SASS Format <a class="direct-link" href="#sass-format"> </a></h1>
-<ul>
-<li><code>.sass</code> (indented)</li>
-<li>No punctuation</li>
-<li>Meaningful whitespace</li>
-</ul>
-<pre><code class="language-sass">$bg: #ead2a8
-
-body
-  background: $bg
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>The older format has a .sass extension.</p>
-<p>This format gets rid of a lot of the punctuation in sass, so some people consider it an easier way to write sass.</p>
-<p>The key thing about this format is that whitespace is meaningful, so you end up indenting with tabs or spaces whenever you'd type in curly braces.</p>
-<p>You also don't need the ending semicolons.</p>
-<hr>
-<h1 id="scss-format">SCSS Format <a class="direct-link" href="#scss-format"> </a></h1>
-<ul>
-<li><code>.scss</code> (Sassy)</li>
-<li>CSS compatible</li>
-<li>Most popular</li>
-</ul>
+<h1 id="sass-variables">SASS Variables <a class="direct-link" href="#sass-variables"> </a></h1>
 <pre><code class="language-scss">$bg: #ead2a8;
 
 body {
   background: $bg;
 }
 </code></pre>
+<ul>
+<li><code>$NAME</code></li>
+<li><code>&lt;variable&gt;</code>: <code>&lt;expression&gt;</code></li>
+<li>Compile to CSS</li>
+</ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>The second format has the .scss extension.</p>
-<p>It's more compatible than SASS, but it does have the same punctuation that CSS has, so it can take longer to write.</p>
-<p>This is by far the most common and popular format. We'll be focusing on the scss format on this course.</p>
+<p>We've already seen an example of variables in previous code, but let's go over how they work. Sass variables begin with a dollar sign and then a variable name.</p>
+<p>They have a format that is similar to a CSS property declartion with a colon followed by an expression. That means it can use formulas and more complex statements.</p>
+<p>The main difference between a SASS and a regular CSS variable (which are also known as custom properties) is that the SASS variable will always be converted to CSS. In that way, the CSS that's produced will be shorter than with regular CSS.</p>
+<hr>
+<h1 id="scope">Scope <a class="direct-link" href="#scope"> </a></h1>
+<pre><code class="language-scss">$primary-color: red;
+
+h1 {
+  $primary-color: yellow;
+  color: $primary-color;
+}
+
+p {
+  color: $primary-color;
+}
+</code></pre>
+<ul>
+<li>Top Level (Global)</li>
+<li>Curly Braces (Local)</li>
+<li>Shadowing</li>
+</ul>
+<p><a href="https://codepen.io/planetoftheweb/pen/NWameEN?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Variables will normally have a global scope, so you can define them once at the top of your styles and they'll be available everywhere.</p>
+<p>You can also create variables inside curly braces and they'll become local variables instead.</p>
+<p>Local variables can also have the same name as global variables. This is called shadowing, so just watch that you understand that behavior.</p>
+<hr>
+<h1 id="global-flag">Global Flag <a class="direct-link" href="#global-flag"> </a></h1>
+<pre><code class="language-scss">$primary-color: red;
+
+h1 {
+  $primary-color: yellow !global;
+  color: $primary-color;
+}
+</code></pre>
+<ul>
+<li>Redefines globals</li>
+<li>Not for new vars</li>
+</ul>
+<p><a href="https://codepen.io/planetoftheweb/pen/PoJgXrq?editors=1100" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can redefine the value of a global variable by using the global flag at the end of a definition. Here, instead of creating a local variable, we're redefining the value of the primary color.</p>
+<p>You can only use the global flag on an existing variable. You can't use this to create a new variable.</p>
+<hr>
+<h1 id="underscores-vs-hyphens">Underscores vs Hyphens <a class="direct-link" href="#underscores-vs-hyphens"> </a></h1>
+<p>In variable names: <code>_</code> equal <code>-</code></p>
+<pre><code class="language-scss">$primary-color: red;
+$primary_color: yellow;
+
+h1 {
+  color: $primary-color;
+}
+</code></pre>
+<p><a href="https://codepen.io/planetoftheweb/pen/qBPwLRx?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>One thing to watch out for is that as far as sass is concerned underscores and hyphens are equivalent, so if you see the example above, you might expect that the variable called primary-hyphen-color would have a value of red, but it's been overriden by the one with the underscore.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -278,13 +318,19 @@ body {
             <div class="">
                 <ol>
                     
-                    <li><a href="#syntax-versions">Syntax Versions</a>
+                    <li><a href="#using-variables">Using Variables</a>
             		</li>
 
-                    <li><a href="#sass-format">SASS Format</a>
+                    <li><a href="#sass-variables">SASS Variables</a>
             		</li>
 
-                    <li><a href="#scss-format">SCSS Format</a>
+                    <li><a href="#scope">Scope</a>
+            		</li>
+
+                    <li><a href="#global-flag">Global Flag</a>
+            		</li>
+
+                    <li><a href="#underscores-vs-hyphens">Underscores vs Hyphens</a>
             		</li>
                 </ol>
             </div>
